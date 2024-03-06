@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu Example</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h2>Dropdown Menu</h2>
+  
+  <div class="form-group">
+    <label for="selectOption">Select an Option:</label>
+    <select class="form-control" id="selectOption">
+        <option value="">--Select--</option>
+        <option value="squad_info_all">squad_info_all</option>
+        <option value="squad_info">squad_info</option>
+        <option value="powerplay_players">powerplay_players</option>
+        <option value="match_team_player_info">match_team_player_info</option>
+        <option value="match_info">match_info</option>
+        <option value="contests">contests</option>
+        <option value="user_contest_joined">user_contest_joined</option>
+        <option value="user_viewstanding">user_viewstanding</option>
+        <option value="user_match_contestdetails">user_match_contestdetails</option>
+        <option value="user_matchdetails">user_matchdetails</option>
+        <option value="match_contest_joined">match_contest_joined</option>
+        <option value="player_score_data">player_score_data</option>
+        <option value="squad_player_usage">squad_player_usage</option>
+        <option value="contests_category">contests_category</option>
+        <option value="top_point_in_match">top_point_in_match</option>
+        <option value="default_contest">default_contest</option>
+        <option value="highlighted_pot">highlighted_pot</option>
+        <option value="banner_data">banner_data</option>
+        <option value="contest_joined">contest_joined</option>
+    </select>
+  </div>
+  
+  <div id="content" style="display: none;">
+    <!-- Content for selected option will be displayed here -->
+    <div id="inputFields" style="margin-top: 20px;">
+      <!-- Input fields for selected option will be displayed here -->
+      
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+</div>
+
+<script>
+  // Function to show content based on selected option
+  function showContent() {
+    var select = document.getElementById("selectOption");
+    var selectedOption = select.value;
+    var contentDiv = document.getElementById("content");
+    var inputFieldsDiv = document.getElementById("inputFields");
+
+    // Clear previous input fields
+    inputFieldsDiv.innerHTML = "";
+
+    // Add input fields based on the selected option
+    if (selectedOption === "squad_info_all" && "user_match_contestdetails" && "user_matchdetails") {
+      contentDiv.style.display = "block";
+      var matchIdInput = document.createElement("input");
+      matchIdInput.setAttribute("type", "text");
+      matchIdInput.setAttribute("class", "form-control");
+      matchIdInput.setAttribute("placeholder", "Enter Match ID");
+      inputFieldsDiv.appendChild(matchIdInput);
+
+      var userIdInput = document.createElement("input");
+      userIdInput.setAttribute("type", "text");
+      userIdInput.setAttribute("class", "form-control");
+      userIdInput.setAttribute("placeholder", "Enter User ID");
+      inputFieldsDiv.appendChild(userIdInput);
+    }
+
+    else if (selectedOption === "squad_info") {
+      contentDiv.style.display = "block";
+      var matchIdInput = document.createElement("input");
+      matchIdInput.setAttribute("type", "text");
+      matchIdInput.setAttribute("class", "form-control");
+      matchIdInput.setAttribute("placeholder", "Enter Match ID");
+      inputFieldsDiv.appendChild(matchIdInput);
+
+      var userIdInput = document.createElement("input");
+      userIdInput.setAttribute("type", "text");
+      userIdInput.setAttribute("class", "form-control");
+      userIdInput.setAttribute("placeholder", "Enter User ID");
+      inputFieldsDiv.appendChild(userIdInput);
+
+
+      var squadIdInput = document.createElement("input");
+      squadIdInput.setAttribute("type", "text");
+      squadIdInput.setAttribute("class", "form-control");
+      squadIdInput.setAttribute("placeholder", "Enter squad ID");
+      inputFieldsDiv.appendChild(squadIdInput);
+    } 
+
+    else if (selectedOption === "match_team_player_info" && "match_info" && "best_squad" && "contests_category" && "top_point_in_match" && "default_contest") {
+      contentDiv.style.display = "block";
+      var matchIdInput = document.createElement("input");
+      matchIdInput.setAttribute("type", "text");
+      matchIdInput.setAttribute("class", "form-control");
+      matchIdInput.setAttribute("placeholder", "Enter Match ID");
+      inputFieldsDiv.appendChild(matchIdInput);
+  }
+    else if (selectedOption === "powerplay_players") {
+      contentDiv.style.display = "block";
+      var userIdInput = document.createElement("input");
+      userIdInput.setAttribute("type", "text");
+      userIdInput.setAttribute("class", "form-control");
+      userIdInput.setAttribute("placeholder", "Enter user ID");
+      inputFieldsDiv.appendChild(userIdInput);
+
+      var contestIdInput = document.createElement("input");
+      contestIdInput.setAttribute("type", "text");
+      contestIdInput.setAttribute("class", "form-control");
+      contestIdInput.setAttribute("placeholder", "Enter contestId ID");
+      inputFieldsDiv.appendChild(contestIdInput);
+
+      var teamIdInput = document.createElement("input");
+      teamIdInput.setAttribute("type", "text");
+      teamIdInput.setAttribute("class", "form-control");
+      teamIdInput.setAttribute("placeholder", "Enter teamId ID");
+      inputFieldsDiv.appendChild(teamIdInput);
+
+      var joinedIdInput = document.createElement("input");
+      joinedIdInput.setAttribute("type", "text");
+      joinedIdInput.setAttribute("class", "form-control");
+      joinedIdInput.setAttribute("placeholder", "Enter joinedId ID");
+      inputFieldsDiv.appendChild(joinedIdInput);
+    }
+
+    else if (selectedOption === "contests" && "contest_joined") {
+      contentDiv.style.display = "block";
+      var contestIdInput = document.createElement("input");
+      contestIdInput.setAttribute("type", "text");
+      contestIdInput.setAttribute("class", "form-control");
+      contestIdInput.setAttribute("placeholder", "Enter contestId ID");
+      inputFieldsDiv.appendChild(contestIdInput);
+    }
+
+    else if (selectedOption === "user_contest_joined") {
+      contentDiv.style.display = "block";
+      var contestIdInput = document.createElement("input");
+      contestIdInput.setAttribute("type", "text");
+      contestIdInput.setAttribute("class", "form-control");
+      contestIdInput.setAttribute("placeholder", "Enter contestId ID");
+      inputFieldsDiv.appendChild(contestIdInput);
+
+      var userIdInput = document.createElement("input");
+      userIdInput.setAttribute("type", "text");
+      userIdInput.setAttribute("class", "form-control");
+      userIdInput.setAttribute("placeholder", "Enter user ID");
+      inputFieldsDiv.appendChild(userIdInput);
+    }
+
+    else if (selectedOption === "user_viewstanding") {
+      contentDiv.style.display = "block";
+      var userIdInput = document.createElement("input");
+      userIdInput.setAttribute("type", "text");
+      userIdInput.setAttribute("class", "form-control");
+      userIdInput.setAttribute("placeholder", "Enter user ID");
+      inputFieldsDiv.appendChild(userIdInput);
+    }
+
+    else if (selectedOption === "match_contest_joined") {
+      contentDiv.style.display = "block";
+      var matchIdInput = document.createElement("input");
+      matchIdInput.setAttribute("type", "text");
+      matchIdInput.setAttribute("class", "form-control");
+      matchIdInput.setAttribute("placeholder", "Enter Match ID");
+      inputFieldsDiv.appendChild(matchIdInput);
+
+      var contestIdInput = document.createElement("input");
+      contestIdInput.setAttribute("type", "text");
+      contestIdInput.setAttribute("class", "form-control");
+      contestIdInput.setAttribute("placeholder", "Enter contestId ID");
+      inputFieldsDiv.appendChild(contestIdInput);
+
+      var joinedIdInput = document.createElement("input");
+      joinedIdInput.setAttribute("type", "text");
+      joinedIdInput.setAttribute("class", "form-control");
+      joinedIdInput.setAttribute("placeholder", "Enter joinedId ID");
+      inputFieldsDiv.appendChild(joinedIdInput);
+    }
+
+    else if (selectedOption === "player_score_data" && "squad_player_usage") {
+      contentDiv.style.display = "block";
+      var matchIdInput = document.createElement("input");
+      matchIdInput.setAttribute("type", "text");
+      matchIdInput.setAttribute("class", "form-control");
+      matchIdInput.setAttribute("placeholder", "Enter Match ID");
+      inputFieldsDiv.appendChild(matchIdInput);
+
+      var playerIdInput = document.createElement("input");
+      playerIdInput.setAttribute("type", "text");
+      playerIdInput.setAttribute("class", "form-control");
+      playerIdInput.setAttribute("placeholder", "Enter playerId ID");
+      inputFieldsDiv.appendChild(playerIdInput);
+
+    }
+    else {
+      contentDiv.style.display = "none";
+    }
+
+}
+document.getElementById("selectOption").addEventListener("change", showContent);
+
+const fetchData = async (url) => {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          processData: false
+        })
+      });
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error('Error:', error);
+      throw new Error('Error fetching data');
+    }
+  };
+
+  const handleSubmit = async () => {
+  try {
+    const url = 'http://localhost:8000/api/read/1';
+    //console.log('Fetching data from:', url);
+    const data = await fetchData(url);
+    console.log('Response data:', data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+
+
+document.getElementById("submitButton").addEventListener("click", handleSubmit);
+</script>
+</body>
+</html>
